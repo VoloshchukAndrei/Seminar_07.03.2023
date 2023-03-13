@@ -42,7 +42,6 @@ void PrintArray(int[,] N)
 
 void ArrayReversalFirstLastLine(int[,] N)
 {
-    int A = N.GetLength(0) - 1;
     for (int j = 0; j < N.GetLength(1); j++)
     {
         int i = 0;
