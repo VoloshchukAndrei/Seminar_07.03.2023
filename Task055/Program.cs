@@ -25,11 +25,11 @@ int[,] arrayOne = GetArray(rows, columns);
 PrintArray(arrayOne);
 Console.WriteLine();
 
-// int[,] arrayTwo = ArrayReversalRowsColumns(arrayOne);
-// PrintArray(arrayTwo);
+int[,] arrayTwo = ArrayReversalRowsColumns(arrayOne);
+PrintArray(arrayTwo);
 
-ArrayReversalRowsColumns(arrayOne);
-PrintArray(arrayOne);
+// ArrayReversalRowsColumns(arrayOne);
+// PrintArray(arrayOne);
 
 int[,] GetArray(int M, int N)
 {
@@ -69,12 +69,31 @@ void PrintArray(int[,] N)
 //     return result;
 // }
 
-void ArrayReversalRowsColumns(int[,] N)
+// void ArrayReversalRowsColumns(int[,] N)
+// {
+//     if (N.GetLength(0) != N.GetLength(1))
+//     {
+//         Console.WriteLine("В данной матрице нельзя заменить элементы!");
+//         return;
+//     }
+
+//     for (int i = 0; i < N.GetLength(0); i++)
+//     {
+//         for (int j = i; j < N.GetLength(1); j++) // J = I
+//         {
+//             int Q = N[j, i];
+//             N[j, i] = N[i, j];
+//             N[i, j] = Q;
+//         }
+//     }
+// }
+
+int[,] ArrayReversalRowsColumns(int[,] N)
 {
     if (N.GetLength(0) != N.GetLength(1))
     {
         Console.WriteLine("В данной матрице нельзя заменить элементы!");
-        return;
+        return new int[0, 0]; // возвращение нулевого массива
     }
 
     for (int i = 0; i < N.GetLength(0); i++)
@@ -86,4 +105,5 @@ void ArrayReversalRowsColumns(int[,] N)
             N[i, j] = Q;
         }
     }
+    return N;
 }
